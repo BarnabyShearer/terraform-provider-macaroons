@@ -7,8 +7,16 @@ At the moment it is tested for scoping a pypi.org's API token per project (PRs f
 ## Example Usage
 
 ```hcl
-resource "macaroons_pypi_token" "projet_token" {
+terraform {
+  required_providers {
+    macaroons = {
+      source = "BarnabyShearer/macaroons"
+    }
+  }
+}
+
+resource "macaroons_pypi_token" "efm8" {
   source_token = "pypi-ABC…"
-  project      = "foobar"
+  project      = "efm8"
 }
 ```
