@@ -1,4 +1,4 @@
-terraform-provider-macaroons: *.go */*.go
+terraform-provider-macaroons: *.go */*.go go.mod
 	go build .
 
 install: terraform-provider-macaroons
