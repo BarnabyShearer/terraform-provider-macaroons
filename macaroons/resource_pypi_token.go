@@ -23,24 +23,32 @@ type ProjectCaveat struct {
 
 func resourcePypiToken() *schema.Resource {
 	return &schema.Resource{
+		Description:   "Provides a method of restricting user-scoped pypi.org API tokens into projects-scoped tokens.",
 		CreateContext: resourcePypiTokenCreate,
 		UpdateContext: resourcePypiTokenCreate,
 		ReadContext:   resourcePypiTokenNoOp,
 		DeleteContext: resourcePypiTokenNoOp,
 		Schema: map[string]*schema.Schema{
+			"id": {
+				Type:     schema.TypeString,
+				Computed: true,
+			},
 			"source_token": {
-				Type:      schema.TypeString,
-				Required:  true,
-				Sensitive: true,
+				Type:        schema.TypeString,
+				Required:    true,
+				Sensitive:   true,
+				Description: "A user-scoped API token from pypi.org.",
 			},
 			"project": {
-				Type:     schema.TypeString,
-				Required: true,
+				Type:        schema.TypeString,
+				Required:    true,
+				Description: "The name of project to create a project-scoped token for.",
 			},
 			"token": {
-				Type:      schema.TypeString,
-				Computed:  true,
-				Sensitive: true,
+				Type:        schema.TypeString,
+				Computed:    true,
+				Sensitive:   true,
+				Description: "The resulting API token that can only be used for given project.",
 			},
 		},
 	}
