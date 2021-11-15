@@ -6,5 +6,3 @@ Macaroons are flexible authorization credentials that support decentralized dele
 
 At the moment it is tested for scoping a pypi.org's API token per project (PRs for other uses welcome).
 
-
-
