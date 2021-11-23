@@ -1,2 +1,5 @@
 terraform-provider-macaroons
+.terraform.lock.hcl
+.terraform
+terraform.tfstate*
 
