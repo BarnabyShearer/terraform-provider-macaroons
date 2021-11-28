@@ -1,5 +1,14 @@
-terraform-provider-macaroons: *.go */*.go go.mod  docs/index.md
+terraform-provider-macaroons: *.go */*.go go.mod  docs/index.md test
 	go build .
+
+test:
+	terraform fmt -recursive
+	go fmt ./...
+	go vet .
+	go test ./...
+
+testacc: test
+	TF_ACC=1 go test ./...
 
 install: terraform-provider-macaroons
 	mkdir -p ~/.terraform.d/plugins/registry.terraform.io/BarnabyShearer/macaroons/0.1.0/linux_amd64
