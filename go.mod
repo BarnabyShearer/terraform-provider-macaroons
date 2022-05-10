@@ -4,6 +4,6 @@ go 1.16
 
 require (
 	github.com/hashicorp/terraform-plugin-docs v0.8.0
-	github.com/hashicorp/terraform-plugin-sdk/v2 v2.15.0
+	github.com/hashicorp/terraform-plugin-sdk/v2 v2.16.0
 	gopkg.in/macaroon.v2 v2.1.0
 )
